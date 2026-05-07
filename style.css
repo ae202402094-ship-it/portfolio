@@ -48,3 +48,20 @@ html {
             100% { transform: translateX(calc(-220px * 4 - 1rem * 4)); } 
         }
 
+        @keyframes flower-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-flower {
+    animation: flower-spin 10s linear infinite;
+}
+
+#welcome-overlay {
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+}
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}

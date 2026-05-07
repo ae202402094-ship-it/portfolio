@@ -8,8 +8,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Welcome Animation Keyframes */
+        @keyframes flower-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-flower {
+            animation: flower-spin 10s linear infinite;
+        }
+
+        #welcome-overlay {
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+        }
+
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Glass Card Utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
 </head>
 <body class="text-slate-900" style="background: linear-gradient(to bottom, #EFE5C9 0%, #C4A484 50%, #4A3728 100%); background-attachment: fixed;">
+
+    <div id="welcome-overlay" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#fdfbf7]">
+        <div class="relative flex flex-col items-center">
+            <div class="text-6xl mb-6 animate-flower">🌸</div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold text-lime-900 tracking-tight opacity-0 animate-[fadeIn_1s_ease-in_forwards]">
+                Hello, I'm Jessa.
+            </h1>
+            <p class="text-slate-500 mt-2 opacity-0 animate-[fadeIn_1s_ease-in_1s_forwards]">
+                Welcome to my creative space
+            </p>
+        </div>
+    </div>
 
     <header class="fixed w-full top-0 z-50 bg-white/10 backdrop-blur-md shadow-sm border-b border-white/20">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
@@ -28,7 +73,6 @@
     <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
     <div class="glass-card p-10 md:p-12 rounded-[2.5rem] shadow-2xl max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
         
-        <!-- Text Content -->
         <div class="text-left">
             <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-4 drop-shadow-sm leading-tight">
                 Welcome to <br>my Portfolio
@@ -49,57 +93,41 @@
             </div>
         </div>
 
-        <!-- Carousel Content (Fixed) -->
         <div class="w-full overflow-hidden carousel-mask py-4">
-            <!-- Ensure the track flexes properly -->
             <div class="carousel-track flex items-center gap-6">
-                
-                <!-- Image Item Template -->
-                <!-- We use aspect-[4/5] and object-cover to make sure every photo looks uniform -->
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image2.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 1">
                 </div>
-                
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image15.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 2">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image00.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 3">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image19.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 4">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image21.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 5">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image10.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 6">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image0.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 7">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image8.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 8">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image22.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 9">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image14.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 10">
                 </div>
-
                 <div class="w-[220px] flex-shrink-0">
                     <img src="images/image6.jpg" class="w-full h-full rounded-2xl shadow-lg border-2 border-white/60 object-cover aspect-[4/5]" alt="Project 11">
                 </div>
-
             </div>
         </div>
     </div>
@@ -107,24 +135,18 @@
 
   <section id="about" class="min-h-screen flex flex-col justify-center items-center px-6 py-24">
     <div class="max-w-6xl w-full">
-        
         <div class="mb-16">
             <h2 class="text-xs font-black text-lime-900 uppercase tracking-[0.4em] mb-4">Background</h2>
             <div class="h-1 w-20 bg-lime-800"></div>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-16 items-start">
-            
             <div class="lg:col-span-5 relative group">
                 <div class="absolute -top-6 -left-6 w-full h-full border-2 border-lime-800/30 rounded-3xl -z-10 group-hover:-top-4 group-hover:-left-4 transition-all duration-500"></div>
                 <div class="absolute -bottom-6 -right-6 w-full h-full bg-white/20 backdrop-blur-sm rounded-3xl -z-10 group-hover:-bottom-4 group-hover:-right-4 transition-all duration-500"></div>
 
                 <div class="relative overflow-hidden rounded-3xl shadow-2xl bg-slate-200 aspect-[4/5]">
-                    <img 
-                        src="images/pic1.png"  
-                        alt="Jessa Mae Ferrer" 
-                        class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
-                    >
+                    <img src="images/pic1.png" alt="Jessa Mae Ferrer" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700">
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent text-white">
                         <p class="text-sm font-bold tracking-widest uppercase">Computer Science Student</p>
                         <p class="text-xs opacity-80">Western Mindanao State University</p>
@@ -137,7 +159,6 @@
                     <h3 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight mb-6">
                         Bridging Technical Logic with <span class="text-lime-900 italic">User-Centered Design.</span>
                     </h3>
-                    
                     <p class="text-lg text-slate-700 leading-relaxed">
                         "Hi! I’m Jessa Mae Ferrer. I enjoy building helpful technology that makes a real difference in our community. I am currently in my second year at Western Mindanao State University, where I focus on creating clean and reliable code. Whether I am working on database logic or designing easy-to-use screens, my goal is always the same: turning complex problems into simple, everyday tools. I am passionate about learning and growing as a developer, and I am excited to share my journey with you through this portfolio."
                     </p>
@@ -187,13 +208,9 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
-
-
 
     <section id="projects" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
         <div class="max-w-7xl w-full">
@@ -233,7 +250,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
             <a href="week1.html" class="group block bg-white/40 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-sm hover:shadow-xl hover:bg-lime-800 transition-all duration-300">
                 <span class="text-xs font-black text-lime-900 group-hover:text-lime-100 uppercase tracking-widest">Foundations</span>
                 <h4 class="text-2xl font-bold text-slate-900 group-hover:text-white mt-1">Week 01</h4>
@@ -319,7 +335,7 @@
                 <span class="text-xs font-black text-lime-900 group-hover:text-lime-100 uppercase tracking-widest">Final Milestone</span>
                 <h4 class="text-2xl font-bold text-slate-900 group-hover:text-white mt-1">Week 10</h4>
                 <p class="text-sm text-slate-700 group-hover:text-lime-50 mt-4 line-clamp-3">
-                                               Successfully presented the school management system to the DepEd division office. Finalized satellite mapping and automated coordinate-to-address logic.
+                    Successfully presented the school management system to the DepEd division office. Finalized satellite mapping and automated coordinate-to-address logic.
                 </p>
                 <div class="mt-6 flex items-center text-lime-800 group-hover:text-white font-bold text-sm">Read Full Report →</div>
             </a>
@@ -328,17 +344,13 @@
     </div>
 </section>
 
-
-
     <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20">
         <div class="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-4xl font-bold text-slate-900 mb-6 border-l-8 border-lime-800 pl-4 uppercase tracking-tight">Get In Touch</h2>
-
                 <p class="text-slate-800 mb-10 leading-relaxed font-medium text-lg">
                     I'm currently looking for new opportunities and would love to hear about your project. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
                 </p>
-                
                 <div class="space-y-8 mt-10">
                     <div class="flex items-center gap-5">
                         <div class="bg-white/30 backdrop-blur-md p-4 rounded-full text-lime-900">
@@ -363,6 +375,19 @@
     <footer class="bg-black/30 backdrop-blur-lg border-t border-white/10 py-8 mt-12 w-full text-center">
         <p class="text-white/50 text-[10px] font-bold uppercase tracking-[0.5em]">&copy; 2026 Jessa Mae Ferrer</p>
     </footer>
+
+    <script>
+    window.addEventListener('load', () => {
+        const overlay = document.getElementById('welcome-overlay');
+        
+        setTimeout(() => {
+            overlay.classList.add('fade-out');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 800);
+        }, 2500);
+    });
+    </script>
 
 </body>
 </html>
