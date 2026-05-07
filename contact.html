@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jessa Mae Ferrer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+    <style> 
+        body { font-family: 'Inter', sans-serif; } 
+        .font-serif { font-family: 'Lora', serif; } 
+    </style>
+</head>
+<body class="min-h-screen text-slate-900 flex flex-col" style="background: linear-gradient(to bottom, #EFE5C9 0%, #C4A484 50%, #4A3728 100%); background-attachment: fixed;">
+
+   <header class="sticky top-0 z-50 bg-white/10 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold text-slate-900 tracking-tight">
+                Jessa<span class="text-lime-800">.</span>
+            </div>
+            <nav class="hidden md:flex space-x-10 text-sm font-bold tracking-widest text-slate-800">
+                <a href="index.html" class="hover:text-lime-900 transition-colors">HOME</a>
+                <a href="about.html" class="hover:text-lime-900 transition-colors">ABOUT</a>
+                <a href="projects.html" class="hover:text-lime-900 transition-colors">PROJECTS</a>
+                <a href="journey.html" class="hover:text-lime-900 transition-colors">JOURNEY</a>
+                <a href="contact.html" class="text-lime-900 border-b-2 border-lime-900">CONTACT</a>
+            </nav>
+            <a href="resume.pdf" class="bg-lime-800 text-white px-6 py-2 rounded-md font-extrabold shadow-md hover:bg-lime-900 transition-all active:scale-95">RESUME</a>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto px-6 py-20 w-full">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            
+            <div>
+                <h2 class="text-4xl font-bold text-slate-900 mb-6 border-l-8 border-lime-800 pl-4 uppercase tracking-tight">Get In Touch</h2>
+                <p class="text-slate-800 mb-10 leading-relaxed font-medium text-lg">
+                    I'm currently looking for new opportunities and would love to hear about your project. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+                </p>
+                
+                <div class="space-y-8">
+                    <div class="flex items-center gap-5">
+                        <div class="bg-white/30 backdrop-blur-md p-4 rounded-full text-lime-900 shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-lime-900 uppercase tracking-widest">Email</p>
+                            <p class="font-bold text-slate-900 text-lg">jessamae.ferrer@email.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-5">
+                        <div class="bg-white/30 backdrop-blur-md p-4 rounded-full text-lime-900 shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-lime-900 uppercase tracking-widest">Location</p>
+                            <p class="font-bold text-slate-900 text-lg">Zamboanga City, PH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/40 backdrop-blur-xl p-10 rounded-3xl shadow-2xl border border-white/30">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-black text-slate-800 mb-2 uppercase tracking-wide">Full Name</label>
+                        <input type="text" class="w-full px-5 py-3 bg-white/50 border border-white/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-lime-800 transition-all placeholder-slate-500" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-black text-slate-800 mb-2 uppercase tracking-wide">Email Address</label>
+                        <input type="email" class="w-full px-5 py-3 bg-white/50 border border-white/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-lime-800 transition-all placeholder-slate-500" placeholder="email@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-black text-slate-800 mb-2 uppercase tracking-wide">Message</label>
+                        <textarea rows="4" class="w-full px-5 py-3 bg-white/50 border border-white/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-lime-800 transition-all placeholder-slate-500" placeholder="How can I help?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-lime-800 hover:bg-lime-900 text-white font-black py-4 rounded-xl shadow-lg transition-all active:scale-95 uppercase tracking-widest">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-white/70 text-sm font-medium">
+        <p>&copy; 2026 Jessa Mae Ferrer. Designed with precision.</p>
+    </footer>
+
+</body>
+</html>

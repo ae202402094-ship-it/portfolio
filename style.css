@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@600&display=swap');
+  
+html { 
+            scroll-behavior: smooth; 
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        } 
+        .font-serif { 
+            font-family: 'Lora', serif; 
+        } 
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #EFE5C9; }
+        ::-webkit-scrollbar-thumb { background: #897B5E; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4A3728; }
+
+        /* Reusable Glassmorphism Class */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Carousel Fade Mask & Animation */
+        .carousel-mask {
+            /* Creates a fade-out effect on the left and right edges */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            /* 4 images (220px each) + 4 gaps (1rem/16px each) = 944px total movement */
+            animation: scroll 15s linear infinite;
+        }
+        
+        .carousel-track:hover {
+            animation-play-state: paused; /* Pause on hover so viewers can look */
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-220px * 4 - 1rem * 4)); } 
+        }
+
